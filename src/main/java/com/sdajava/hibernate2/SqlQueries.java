@@ -5,6 +5,11 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.Query;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class SqlQueries {
@@ -27,8 +32,27 @@ public class SqlQueries {
         catch (HibernateException e) {
             if (tx != null) tx.rollback();
             e.printStackTrace();
-        } finally {
-            session.close();
+        }
+    }
+
+    public static void sqlInsertRow(Session session) throws ParseException {
+        Transaction tx = null;
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date d1 = df.parse("12-10-2011");
+        Book book =
+                new Book("Adam słodowy o innych",
+                        "Adam Kwaśny",
+                        d1,
+                        "tez brakujacy opis");
+        try
+        {
+            tx = session.beginTransaction();
+            session.save(book);
+            tx.commit();
+        }
+        catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
         }
     }
 }
