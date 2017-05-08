@@ -60,11 +60,12 @@ public class SqlQueries {
         Transaction tx = null;
         try
         {
-            String hsl = "update book set title =: tytul where id =: id ";
+            String hsl = "update " + Book.class.getName() +
+                    " set title = :tytul where id = :id";
             Query query = session.createQuery(hsl);
             query.setParameter("tytul", "adas na wakacjach");
             query.setParameter("id", 3);
-            int result = query.executeUpdate();
+            query.executeUpdate();
             tx = session.beginTransaction();
             tx.commit();
         }
