@@ -2,6 +2,7 @@ package com.sdajava.hibernate2;
 
 import org.hibernate.*;
 import static com.sdajava.hibernate2.HibernateUtil.getSession;
+import static com.sdajava.hibernate2.SqlQueries.sqlEditRow;
 import static com.sdajava.hibernate2.SqlQueries.sqlInsertRow;
 import static com.sdajava.hibernate2.SqlQueries.sqlSelectAll;
 
@@ -12,6 +13,7 @@ public class Main {
         Session session = getSession();
         sqlSelectAll(session);
         sqlInsertRow(session);
+        sqlEditRow(session);
         session.close();
     }
 }

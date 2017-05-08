@@ -55,5 +55,23 @@ public class SqlQueries {
             e.printStackTrace();
         }
     }
+
+    public static void sqlEditRow(Session session) throws ParseException {
+        Transaction tx = null;
+        try
+        {
+            String hsl = "update book set title =: tytul where id =: id ";
+            Query query = session.createQuery(hsl);
+            query.setParameter("tytul", "adas na wakacjach");
+            query.setParameter("id", 3);
+            int result = query.executeUpdate();
+            tx = session.beginTransaction();
+            tx.commit();
+        }
+        catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        }
+    }
 }
 
