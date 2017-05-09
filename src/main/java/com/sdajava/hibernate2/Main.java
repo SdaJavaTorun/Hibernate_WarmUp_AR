@@ -8,13 +8,13 @@ public class Main {
 
     public static void main(final String[] args) throws Exception {
         Session session = getSession();
-        /*sqlInsertRow(session, "Adam słodowy o innych",
+        sqlInsertRow(session, "Adam słodowy o innych",
                             "Adam Kwaśny",
                               "12-10-2011",
-                              "tez brakujacy opis");*/
+                              "tez brakujacy opis");
         sqlEditRow(session,4, "Adam na wakacjach");
-        for (int i=3; i<17; i++)
-            sqlDeleteRow(session,17);
+        //for (int i=3; i<17; i++)
+          //  sqlDeleteRow(session,17);
         sqlSelectAll(session);
         session.close();
     }
