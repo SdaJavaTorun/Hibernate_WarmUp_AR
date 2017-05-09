@@ -1,4 +1,4 @@
-package com.sdajava.hibernate2;
+package com.sdajava.hibernate2.utility;
 
 import org.hibernate.HibernateError;
 import org.hibernate.Session;

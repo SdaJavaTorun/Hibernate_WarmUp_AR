@@ -24,9 +24,11 @@
             false
         </property>
         <property name="hibernate.connection.password">
+            kkeczap
         </property>
+        <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
         <mapping class="com.sdajava.hibernate2.entity.Book"/>
         <!-- DB schema will be updated if needed -->
-        <!-- <property name="hbm2ddl.auto">update</property> -->
+
     </session-factory>
 </hibernate-configuration>
