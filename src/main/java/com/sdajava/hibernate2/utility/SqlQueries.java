@@ -65,11 +65,11 @@ public class SqlQueries {
             Session session, String title, String author, String date, String desc)
             throws ParseException {
         Transaction tx = null;
-        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        Date d1 = df.parse(date);
-        Book book =
-                new Book(title, author, d1, desc);
         try {
+            DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+            Date d1 = df.parse(date);
+            Book book =
+                    new Book(title, author, d1, desc);
             tx = session.beginTransaction();
             session.save(book);
             tx.commit();
