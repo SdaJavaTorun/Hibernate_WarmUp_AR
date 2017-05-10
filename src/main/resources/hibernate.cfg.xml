@@ -10,7 +10,6 @@
         <property name="hibernate.connection.driver_class">
             com.mysql.cj.jdbc.Driver
         </property>
-
         <property name="hibernate.connection.url">
             jdbc:mysql://localhost/ksiegarnia
         </property>
@@ -27,7 +26,6 @@
             false
         </property>
         <property name="hibernate.connection.password">
-            kkeczap
         </property>
         <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
         <mapping class="com.sdajava.hibernate2.entity.Book"/>

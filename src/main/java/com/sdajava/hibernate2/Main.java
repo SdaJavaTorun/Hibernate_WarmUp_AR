@@ -8,6 +8,7 @@ public class Main {
 
     public static void main(final String[] args) throws Exception {
         Session session = getSession();
+        sqlSelectOne(session,22);
         sqlInsertRow(session, "Adam słodowy o innych",
                             "Adam Kwaśny",
                               "12-10-2011",
